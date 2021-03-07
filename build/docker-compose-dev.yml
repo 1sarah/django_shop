@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    volumes:
+      - "django_shop-pgdata:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_DB=django_shop
+      - POSTGRES_USER=django_shop
+      - POSTGRES_PASSWORD=django_shop
+    ports:
+      - "5444:5432"
+
+volumes:
+  django_shop-pgdata:
